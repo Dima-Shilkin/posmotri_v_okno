@@ -47,7 +47,6 @@ ol {
   align-items: flex-end;
   gap: 30px;
   max-width: 1140px;
-  max-height: 534px;
 }
 
 .result__video-container {
@@ -94,7 +93,7 @@ ol {
   block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
-} 
+}
 
 .search-form__textfield {
   min-width: 225px;
@@ -133,7 +132,7 @@ ol {
 
 .button {
   height: 34px;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
@@ -175,8 +174,8 @@ ol {
 
 .content__list {
   position: relative;
-  max-height: 298px;
-  overflow-x: hidden;
+  height: 298px;
+  overflow-y: auto;
 }
 
 .content__list-item:not(:last-of-type) {
@@ -185,7 +184,7 @@ ol {
 
 .content__card-link {
   display: block;
-  padding: 2px;
+  padding: 2px 0;
   color: #fff;
   text-decoration: none;
 }
@@ -196,6 +195,7 @@ ol {
 
 .content__video-card-description-container {
   width: 200px;
+  padding-left: 2px;
 }
 
 .content__video-card-title {
@@ -205,6 +205,10 @@ ol {
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 200px;
 }
 
 .content__video-card-description {
@@ -219,6 +223,7 @@ ol {
   width: 193px;
   height: 103px;
   object-fit: cover;
+  object-position: center;
 }
 
 input:focus {
@@ -249,6 +254,10 @@ input[type=checkbox]:checked + .search-form__pseudo-checkbox::before {
   cursor: pointer;
 }
 
+.button:focus {
+  outline: none;
+}
+
 .button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: -2px;
@@ -269,7 +278,11 @@ input[type=checkbox]:checked + .search-form__pseudo-checkbox::before {
   text-decoration: underline;
 }
 
+.content__card-link:focus {
+  outline: none;
+}
+
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: -1px;
-} 
+}
